@@ -100,10 +100,10 @@
 
   <div style="overflow: auto;">
     <div style="margin-left:30px;">
-      <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/cardiac_app_icon.png" style="height:100px; width:100px; float:left;">
+      <img src="cardiac_app_icon.png" style="height:100px; width:100px; float:left;">
       <label style="margin-top:45px; font-size:175%;"><span style="color:green; font-weight:bold;">Cardiac A.</span></label>
       <div>
-          <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/sbu.png" style="height:100px; width:200px; float:right; margin-right:60px; margin-top:-60px;">
+          <img src="sbu.png" style="height:100px; width:200px; float:right; margin-right:60px; margin-top:-60px;">
         <!--  <label style="margin-left:120px;font-size:175%;"><span style="color:green; font-weight:bold; float:right; margin-right:60px;">Stony Brook Medicine</span></label> -->
       </div>
       
@@ -111,21 +111,21 @@
   <div class="hr" style="margin-top:70px;"><hr /></div>
     <div style="margin-top:30px; margin-bottom:30px;">
       <label style="float:left; font-size:140%;"><span style="color:red; font-weight:bold;">Cardiac Arrest Information</span></label>
-      <label for="code" id="code" style="margin-left:1350px;">CODE: 0</label>
+      <label for="code" id="code" style="margin-left:1000px;">CODE: 0</label>
     </div>
    
-      <div data-role="controlgroup" id="cardiac_data_row" data-type="vertical" style="height:350px; overflow-y:scroll;">
+      <div data-role="controlgroup" id="cardiac_data_row" data-type="vertical" style="height:350px; overflow-y:scroll;" class="table-container">
 
         <table id="mytable" class="ui-widget" cellpadding="0" cellspacing="0" style="margin-left:1%; margin-right:1%;">
           <thead class="ui-widget-header">
             <tr style="color:white; background-color:rgb(69, 91, 202);">
               <th>Time</th>
               <th>CPR</th>
+              <th>P.C</th>
               <th>Rhythm</th>
-              <th>Pulse check</th>
               <th>Monitoring</th>
               <th>Intervention</th>
-              <th>  Epinephrine </th>
+              <th>  Epi. </th>
               <th>Bolus</th>
               <th>Infusion</th>
             </tr>
@@ -148,7 +148,7 @@
             
            
             <td  >
-            <input type="checkbox" id="check1" style="margin-left:29%;">
+            <input type="checkbox" id="check1" >
           </td>
 
           <td id = "plus_td">
@@ -172,7 +172,7 @@
              <td  style="width:20%;">
               <div class="parent_fill">
                 <div class="child_select block_align select_class">  
-                <select name="Monitoring" id="Monitoring" onc>
+                <select name="Monitoring" id="Monitoring">
                   <option selected="selected">Select</option>
                   <option>Bedside us</option>
                   <option>Brain Ox</option>
@@ -182,18 +182,17 @@
               </select>
               </div>
               <div class="text_class">
-
                 <input type="text"  name="monitoring" id="monitoring">
               </div>
               <div class="portrait image_class" id = "add_new_monitoring" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
 
             </div>
             </td>
-            <td   >
+            <td>
               <div class="parent_fill">
-                <div class="child_select block_align select_class" style="width:80%;"> 
+                <div class="child_select block_align select_class"> 
                 <select name="Intervention" id="Intervention" onchange="handle_select_change(this);">
                   <option selected="selected" >Select</option>
                   <option>Defrib</option>
@@ -204,12 +203,11 @@
                   <option>Transvenous PM</option>
               </select>
             </div>
-              <div class="text_class" style="width:0px;">
-                
-            
+              <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
               </div>
               <div class="portrait image_class" id = "add_new_intervention" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
             </div>
             </td>
@@ -217,23 +215,31 @@
                 <input type="text" name="EPINOPHRINE" id="EPINOPHRINE"> 
             </td>
             <td>
-                <select name="Bolus" id="Bolus" >
-                  <option selected="selected">Select</option>
-                  <option>Atropine</option>
-                  <option>AMiodarone</option>
-                  <option>Magnesium</option>
-                  <option>D50W</option>
-                  <option>D10W</option>
-                  <option>SOdium bi card</option>
-                  <option>Lidocaine</option>
-                  <option>Vasopressin</option>
-                  <option>IV Fluids</option>
-                  <option>Other Therapy</option>
-              </select>
+            <div class="parent_fill">
+	            <div class="child_select block_align select_class" style="width:65%;">
+	                <select name="Bolus" id="Bolus" >
+	                  <option selected="selected">Select</option>
+	                  <option>Atropine</option>
+	                  <option>AMiodarone</option>
+	                  <option>Magnesium</option>
+	                  <option>D50W</option>
+	                  <option>D10W</option>
+	                  <option>SOdium bi card</option>
+	                  <option>Lidocaine</option>
+	                  <option>Vasopressin</option>
+	                  <option>IV Fluids</option>
+	                  <option>Other Therapy</option>
+	              	</select>
+	            </div>
+            
+            <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              </div> 
             </td>
-            <td style="width:300px;">
+            <td style="width:170px;">
                 <!--<input type="text" name="Infusion" id="Infusion"--> 
-                <div style="overflow-x:scroll; overflow-y:hidden; width:300px; margin-right:-50px;">
+                <div style="overflow-x:scroll; overflow-y:hidden; width:170px; margin-right:-50px;">
                   <div style="width:1000px;">
                   <div class="infusion_div" >
                    <button onclick="toggle_handler(this);">Med1</button>
@@ -279,7 +285,7 @@
             
            
             <td  >
-            <input type="checkbox" id="check1" style="margin-left:29%;">
+            <input type="checkbox" id="check1" >
           </td>
 
           <td id = "plus_td">
@@ -303,7 +309,7 @@
              <td  style="width:20%;">
               <div class="parent_fill">
                 <div class="child_select block_align select_class">  
-                <select name="Monitoring" id="Monitoring" onc>
+                <select name="Monitoring" id="Monitoring">
                   <option selected="selected">Select</option>
                   <option>Bedside us</option>
                   <option>Brain Ox</option>
@@ -313,18 +319,19 @@
               </select>
               </div>
               <div class="text_class">
-
                 <input type="text"  name="monitoring" id="monitoring">
               </div>
               <div class="portrait image_class" id = "add_new_monitoring" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
 
             </div>
             </td>
             <td   >
-                <select name="Intervention" id="Intervention" >
-                  <option selected="selected">Select</option>
+             <div class="parent_fill">
+                <div class="child_select block_align select_class"> 
+                <select name="Intervention" id="Intervention" onchange="handle_select_change(this);">
+                  <option selected="selected" >Select</option>
                   <option>Defrib</option>
                   <option>Airway</option>
                   <option>C Line Placed</option>
@@ -332,28 +339,44 @@
                   <option>ResQ Pod</option>
                   <option>Transvenous PM</option>
               </select>
+            </div>
+              <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              <div class="portrait image_class" id = "add_new_intervention" onclick="onclick_handler(this);">
+                <img src="plus.png">
+              </div>
+            </div>
             </td>
             <td style="width:5%;"  >
                 <input type="text" name="EPINOPHRINE" id="EPINOPHRINE"> 
             </td>
             <td>
-                <select name="Bolus" id="Bolus" >
-                  <option selected="selected">Select</option>
-                  <option>Atropine</option>
-                  <option>AMiodarone</option>
-                  <option>Magnesium</option>
-                  <option>D50W</option>
-                  <option>D10W</option>
-                  <option>SOdium bi card</option>
-                  <option>Lidocaine</option>
-                  <option>Vasopressin</option>
-                  <option>IV Fluids</option>
-                  <option>Other Therapy</option>
-              </select>
+              <div class="parent_fill">
+	            <div class="child_select block_align select_class"  style="width:65%;">
+	                <select name="Bolus" id="Bolus" >
+	                  <option selected="selected">Select</option>
+	                  <option>Atropine</option>
+	                  <option>AMiodarone</option>
+	                  <option>Magnesium</option>
+	                  <option>D50W</option>
+	                  <option>D10W</option>
+	                  <option>SOdium bi card</option>
+	                  <option>Lidocaine</option>
+	                  <option>Vasopressin</option>
+	                  <option>IV Fluids</option>
+	                  <option>Other Therapy</option>
+	              	</select>
+	            </div>
+            
+            <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              </div> 
             </td>
-             <td style="width:300px;">
+             <td style="width:170px;">
                 <!--<input type="text" name="Infusion" id="Infusion"--> 
-                <div style="overflow-x:scroll; overflow-y:hidden; width:300px; margin-right:-50px;">
+                <div style="overflow-x:scroll; overflow-y:hidden; width:170px; margin-right:-50px;">
                   <div style="width:1000px;">
                   <div class="infusion_div" >
                    <button onclick="toggle_handler(this);">Med1</button>
@@ -398,7 +421,7 @@
             
            
            <td  >
-            <input type="checkbox" id="check1" style="margin-left:29%;">
+            <input type="checkbox" id="check1">
           </td>
 
           <td id = "plus_td">
@@ -436,14 +459,16 @@
                 <input type="text"  name="monitoring" id="monitoring">
               </div>
               <div class="portrait image_class" id = "add_new_monitoring" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
 
             </div>
             </td>
             <td   >
-                <select name="Intervention" id="Intervention" >
-                  <option selected="selected">Select</option>
+               <div class="parent_fill">
+                <div class="child_select block_align select_class"> 
+                <select name="Intervention" id="Intervention" onchange="handle_select_change(this);">
+                  <option selected="selected" >Select</option>
                   <option>Defrib</option>
                   <option>Airway</option>
                   <option>C Line Placed</option>
@@ -451,28 +476,44 @@
                   <option>ResQ Pod</option>
                   <option>Transvenous PM</option>
               </select>
+            </div>
+              <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              <div class="portrait image_class" id = "add_new_intervention" onclick="onclick_handler(this);">
+                <img src="plus.png">
+              </div>
+            </div>
             </td>
             <td style="width:5%;"  >
                 <input type="text" name="EPINOPHRINE" id="EPINOPHRINE"> 
             </td>
             <td>
-                <select name="Bolus" id="Bolus" >
-                  <option selected="selected">Select</option>
-                  <option>Atropine</option>
-                  <option>AMiodarone</option>
-                  <option>Magnesium</option>
-                  <option>D50W</option>
-                  <option>D10W</option>
-                  <option>SOdium bi card</option>
-                  <option>Lidocaine</option>
-                  <option>Vasopressin</option>
-                  <option>IV Fluids</option>
-                  <option>Other Therapy</option>
-              </select>
+               <div class="parent_fill">
+	            <div class="child_select block_align select_class"  style="width:65%;">
+	                <select name="Bolus" id="Bolus" >
+	                  <option selected="selected">Select</option>
+	                  <option>Atropine</option>
+	                  <option>AMiodarone</option>
+	                  <option>Magnesium</option>
+	                  <option>D50W</option>
+	                  <option>D10W</option>
+	                  <option>SOdium bi card</option>
+	                  <option>Lidocaine</option>
+	                  <option>Vasopressin</option>
+	                  <option>IV Fluids</option>
+	                  <option>Other Therapy</option>
+	              	</select>
+	            </div>
+            
+            <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              </div> 
             </td>
-             <td style="width:300px;">
+             <td style="width:170px;">
                 <!--<input type="text" name="Infusion" id="Infusion"--> 
-                <div style="overflow-x:scroll; overflow-y:hidden; width:300px; margin-right:-50px;">
+                <div style="overflow-x:scroll; overflow-y:hidden; width:170px; margin-right:-50px;">
                   <div style="width:1000px;">
                   <div class="infusion_div" >
                    <button onclick="toggle_handler(this);">Med1</button>
@@ -515,7 +556,7 @@
             </td>
             
             <td  >
-            <input type="checkbox" id="check1" style="margin-left:29%;">
+            <input type="checkbox" id="check1">
           </td>
 
       
@@ -554,15 +595,14 @@
                 <input type="text"  name="monitoring" id="monitoring">
               </div>
               <div class="portrait image_class" id = "add_new_monitoring" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
 
             </div>
             </td>
             <td   >
               <div class="parent_fill">
-                <div class="child_select block_align select_class">  
-
+                <div class="child_select select_class">  
                 <select name="Intervention" id="Intervention" onchange="handle_select_change(this);">
                   <option selected="selected" >Select</option>
                   <option>Defrib</option>
@@ -578,7 +618,7 @@
                 <input type="text"  name="monitoring" id="monitoring">
               </div>
               <div class="portrait image_class" id = "add_new_monitoring" onclick="onclick_handler(this);">
-                <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png">
+                <img src="plus.png">
               </div>
              </div>   
             </td>
@@ -586,23 +626,31 @@
                 <input type="text" name="EPINOPHRINE" id="EPINOPHRINE"> 
             </td>
             <td>
-                <select name="Bolus" id="Bolus" >
-                  <option selected="selected">Select</option>
-                  <option>Atropine</option>
-                  <option>AMiodarone</option>
-                  <option>Magnesium</option>
-                  <option>D50W</option>
-                  <option>D10W</option>
-                  <option>SOdium bi card</option>
-                  <option>Lidocaine</option>
-                  <option>Vasopressin</option>
-                  <option>IV Fluids</option>
-                  <option>Other Therapy</option>
-              </select>
+               <div class="parent_fill">
+	            <div class="child_select block_align select_class"  style="width:65%;">
+	                <select name="Bolus" id="Bolus" >
+	                  <option selected="selected">Select</option>
+	                  <option>Atropine</option>
+	                  <option>AMiodarone</option>
+	                  <option>Magnesium</option>
+	                  <option>D50W</option>
+	                  <option>D10W</option>
+	                  <option>SOdium bi card</option>
+	                  <option>Lidocaine</option>
+	                  <option>Vasopressin</option>
+	                  <option>IV Fluids</option>
+	                  <option>Other Therapy</option>
+	              	</select>
+	            </div>
+            
+            <div class="text_class">
+                <input type="text"  name="temp" id="temp">           
+              </div>
+              </div> 
             </td>
-             <td style="width:300px;">
+             <td style="width:170px;">
                 <!--<input type="text" name="Infusion" id="Infusion"--> 
-                <div style="overflow-x:scroll; overflow-y:hidden; width:300px; margin-right:-50px;">
+                <div style="overflow-x:scroll; overflow-y:hidden; width:170px; margin-right:-50px;">
                   <div style="width:1000px;">
                   <div class="infusion_div" >
                    <button onclick="toggle_handler(this);">Med1</button>

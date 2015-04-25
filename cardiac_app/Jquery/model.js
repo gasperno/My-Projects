@@ -88,6 +88,8 @@ function startTimer()
           min++;
           flag = true;
           sec = 0;
+          //every min. scroll the table to bottom
+          $('.table-container').scrollTop(10000);
         }
         document.getElementById("cpr").innerHTML = 'CPR:' + min + ":" + count%60;
         document.getElementById("epi").innerHTML = 'EPI:' + min + ":" + count%60;
@@ -190,19 +192,19 @@ function onclick_handler(el)
        var div= wrapper.children[0];
        div.id = c_id;
        el.id = "delete";
-       el.children[0].src = "/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/delete.png"
+       el.children[0].src = "delete.png"
         el.parentElement.parentElement.appendChild(div);
       }
       //el.parentElement.innerHTML = '<div class="portrait" id = "add_new" onclick="onclick_handler(this);"> <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/plus.png"> </div>';
       //alert(el.id);
       //el.parentNode.removeChild(el);
       //el.parentElement.parentElement.removeChild(el.parentElement.parentElement.children[1])
-      //alert("id");
+      //alert("id");  
 }
 
 function add_new_control(el)
 {
-    el.parentElement.innerHTML = el.parentElement.innerHTML + '<div class="portrait" id="delete" onclick="add_new_control(this);"> <input type="text" name="data" id="Pulse_check_data"/> <img src="/Users/shashi/Desktop/shashi/course_material/advance_project/Jquery/delete.png"> </div>';
+    el.parentElement.innerHTML = el.parentElement.innerHTML + '<div class="portrait" id="delete" onclick="add_new_control(this);"> <input type="text" name="data" id="Pulse_check_data"/> <img src="delete.png"> </div>';
     //alert("shashi");
 }
 function handle_select_change(el)
